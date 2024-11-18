@@ -1,7 +1,0 @@
-1.Customowa mapa ./
-2.Opcja w menu do przejrzenia high score ./
-3.Podpięcie bazy danych ./
-4.Nowe funkcjonalności (Power upy itd)
-5.Wyświetlenie sterowanie na ekranie gry ./
-6.Klawisz Pauzy 
-7.Inne poziomy X
