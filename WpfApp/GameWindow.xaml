@@ -1,0 +1,25 @@
+﻿<Window x:Class="SnakeWpfApp.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Background="Black"
+        Title="Snake Game" Height="600" Width="600"
+        KeyDown="Window_KeyDown">
+    <Grid>
+        <!-- Plansza gry -->
+        <Canvas x:Name="GameCanvas" 
+                Width="400" 
+                Height="400" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" />
+
+        <!-- Wyświetlanie punktacji -->
+        <TextBlock x:Name="ScoreTextBlock" 
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Top" 
+                   Margin="10" 
+                   FontSize="20" 
+                   FontWeight="Bold" 
+                   Foreground="White"
+                   Text="Score: 0" />
+    </Grid>
+</Window>

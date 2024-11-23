@@ -140,7 +140,7 @@ namespace SnakeConsoleApp
 
         private void StartScreen()
         {
-            AnsiConsole.Markup("[bold green]Space[/] - Start/Pause\n");
+            AnsiConsole.Markup("[bold green]Space[/] - Start\n");
             AnsiConsole.Markup("[bold green]W/UpArrow[/] - Up\n");
             AnsiConsole.Markup("[bold green]S/DownArrow[/] - Down\n");
             AnsiConsole.Markup("[bold green]A/LeftArrow[/] - Left\n");

@@ -8,9 +8,10 @@ namespace SnakeGameLibrary
 
     public class SnakeGame
     {
+        public int CellSize { get; set; } = 20;
         private const int DefaultBoardWidth = 20;
         private const int DefaultBoardHeight = 10;
-        public bool IsCustomSize { get; private set; } = false; // Flaga informująca, czy mapa ma niestandardowy rozmiar
+        public bool IsCustomSize { get; set; } = false; // Flaga informująca, czy mapa ma niestandardowy rozmiar
         public int BoardWidth { get; private set; } = DefaultBoardWidth;
         public int BoardHeight { get; private set; } = DefaultBoardHeight;
         public List<(int x, int y)> Snake { get; private set; }

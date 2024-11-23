@@ -1,0 +1,41 @@
+﻿<Window x:Class="SnakeWpfApp.HighScoresWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="High Scores" Height="400" Width="400">
+    <Grid>
+        <!-- Nagłówek -->
+        <TextBlock Text="High Scores" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   Margin="0,10,0,20" 
+                   Foreground="Green" />
+
+        <!-- Tabela wyników -->
+        <DataGrid x:Name="HighScoresDataGrid"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="True"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  Margin="10,50,10,50">
+            <DataGrid.Columns>
+                <!-- Ranking -->
+                <DataGridTextColumn Header="Rank" Binding="{Binding Rank}" Width="50"/>
+                <!-- Nazwa gracza -->
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
+                <!-- Wynik -->
+                <DataGridTextColumn Header="Score" Binding="{Binding Score}" Width="80"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Przycisk powrotu -->
+        <Button Content="Back to Menu" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom" 
+                Width="120" 
+                Margin="0,0,0,20" 
+                Click="BackToMenu_Click"/>
+    </Grid>
+</Window>

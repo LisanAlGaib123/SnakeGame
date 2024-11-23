@@ -9,8 +9,43 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Apple.png" />
+    <None Remove="Assets\Body.png" />
+    <None Remove="Assets\SnakeBodyHorizontal.png" />
+    <None Remove="Assets\SnakeBodyTurnBottomLeft.png" />
+    <None Remove="Assets\SnakeBodyTurnBottomRight.png" />
+    <None Remove="Assets\SnakeBodyTurnTopLeft.png" />
+    <None Remove="Assets\SnakeBodyTurnTopRight.png" />
+    <None Remove="Assets\SnakeBodyVertical.png" />
+    <None Remove="Assets\SnakeHeadDown.png" />
+    <None Remove="Assets\SnakeHeadLeft.png" />
+    <None Remove="Assets\SnakeHeadRight.png" />
+    <None Remove="Assets\SnakeHeadUp.png" />
+    <None Remove="Images\SnakeImage.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.35" />
     <PackageReference Include="System.Data.SQLite" Version="1.0.119" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Apple.png" />
+    <Resource Include="Assets\SnakeBodyHorizontal.png" />
+    <Resource Include="Assets\SnakeBodyTurnBottomLeft.png" />
+    <Resource Include="Assets\SnakeBodyTurnBottomRight.png" />
+    <Resource Include="Assets\SnakeBodyTurnTopLeft.png" />
+    <Resource Include="Assets\SnakeBodyTurnTopRight.png" />
+    <Resource Include="Assets\SnakeBodyVertical.png" />
+    <Resource Include="Assets\SnakeHeadDown.png" />
+    <Resource Include="Assets\SnakeHeadLeft.png" />
+    <Resource Include="Assets\SnakeHeadRight.png" />
+    <Resource Include="Assets\SnakeHeadUp.png" />
+    <Resource Include="Images\SnakeImage.png" />
   </ItemGroup>
 
 </Project>
