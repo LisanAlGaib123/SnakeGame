@@ -7,11 +7,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using WpfApp;
 
 namespace SnakeWpfApp
 {
     public partial class MainWindow : Window
     {
+        private GameController controller;
 
         public MainWindow()
         {
@@ -22,8 +24,10 @@ namespace SnakeWpfApp
         // Obsługa kliknięcia "Start Game"
         private void StartGame_Click(object sender, RoutedEventArgs e)
         {
-            // Przejście do gry - możemy stworzyć nową instancję okna gry
-            var gameWindow = new GameWindow();
+
+            var snakeGame = new SnakeGame();
+            var gameController = new GameController(snakeGame);
+            var gameWindow = new GameWindow(gameController);
             gameWindow.Show();
             this.Close(); // Zamykamy menu
         }
@@ -31,7 +35,11 @@ namespace SnakeWpfApp
         // Obsługa kliknięcia "Custom Map"
         private void CustomMap_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Custom Map feature is under development!");
+            var snakeGame = new SnakeGame(); // Tworzymy nową instancję logiki gry
+            var gameController = new GameController(snakeGame); // Przekazujemy ją do kontrolera
+            var customMapWindow = new CustomMapWindow(gameController);
+            customMapWindow.Show();
+            this.Close();
         }
 
         // Obsługa kliknięcia "High Scores"

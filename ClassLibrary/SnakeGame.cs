@@ -112,6 +112,11 @@ namespace SnakeGameLibrary
             ResetGame();
         }
 
+        public (int width, int height) GetBoardSize()
+        {
+            return (BoardWidth, BoardHeight);
+        }
+
         public void ResetToDefaultSize()
         {
             BoardWidth = DefaultBoardWidth;

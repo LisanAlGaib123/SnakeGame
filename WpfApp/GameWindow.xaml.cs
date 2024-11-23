@@ -21,13 +21,13 @@ namespace SnakeWpfApp
         private DispatcherTimer gameTimer;
         private Direction? lastInputDirection = null;
 
-        public GameWindow()
+        public GameWindow(GameController controller)
         {
             InitializeComponent();
 
             // Inicjalizacja gry
             var snakeGame = new SnakeGame();
-            gameController = new GameController(snakeGame);
+            this.gameController = controller;
 
             // Konfiguracja timera
             gameTimer = new DispatcherTimer
@@ -122,20 +122,27 @@ namespace SnakeWpfApp
         {
             GameCanvas.Children.Clear();
 
-            for (int x = 1; x < gameController.GetGameState().BoardWidth; x++)
+            var (width, height) = gameController.GetGameState().GetBoardSize();
+
+            // Dostosowanie wymiarów Canvas
+            GameCanvas.Width = width * gameController.GetGameState().CellSize;
+            GameCanvas.Height = height * gameController.GetGameState().CellSize;
+
+            // Rysowanie siatki
+            for (int x = 1; x < width; x++)
             {
-                for (int y = 1; y < gameController.GetGameState().BoardHeight; y++)
+                for (int y = 1; y < height; y++)
                 {
                     var cell = new Rectangle
                     {
-                        Width = CellSize,
-                        Height = CellSize,
+                        Width = gameController.GetGameState().CellSize,
+                        Height = gameController.GetGameState().CellSize,
                         Stroke = Brushes.Gray,
                         StrokeThickness = 0.5
                     };
 
-                    Canvas.SetLeft(cell, x * CellSize);
-                    Canvas.SetTop(cell, y * CellSize);
+                    Canvas.SetLeft(cell, x * gameController.GetGameState().CellSize);
+                    Canvas.SetTop(cell, y * gameController.GetGameState().CellSize);
                     GameCanvas.Children.Add(cell);
                 }
             }

@@ -12,7 +12,7 @@ namespace WpfApp
         public CustomMapWindow(GameController gameController)
         {
             InitializeComponent();
-            controller = gameController;
+            this.controller = gameController;
         }
 
         private void StartGameButton_Click(object sender, RoutedEventArgs e)
@@ -28,7 +28,7 @@ namespace WpfApp
                 controller.GetGameState().IsCustomSize = true;
 
                 // Uruchomienie gry
-                var gameWindow = new GameWindow();
+                var gameWindow = new GameWindow(controller);
                 gameWindow.Show();
                 this.Close(); // Zamknięcie okna CustomMapWindow
             }
